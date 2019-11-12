@@ -25,7 +25,7 @@ def clock_in():
     os.system(git_add)
     os.system(git_commit + '\'' + strTime + '\'')
     os.system(git_push)
-    timer = threading.Timer(5,printHello)
+    timer = threading.Timer(30, clock_in)
     timer.start()
 
 if __name__ == "__main__":
