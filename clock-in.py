@@ -7,10 +7,13 @@ import os
 import time
 import threading
 
+day_second = 60 * 60 * 24
+
 git_pull = 'git pull'
 git_add = 'git add .'
 git_commit = 'git commit -m '
 git_push = 'git push -u origin master'
+
 
 def clock_in():
     os.system(git_pull)
@@ -25,10 +28,10 @@ def clock_in():
     os.system(git_add)
     os.system(git_commit + '\'' + strTime + '\'')
     os.system(git_push)
-    timer = threading.Timer(30, clock_in)
+    timer = threading.Timer(day_second, clock_in)
     timer.start()
 
-if __name__ == "__main__":
-    timer = threading.Timer(30, clock_in)
-    clock_in() 
 
+if __name__ == "__main__":
+    timer = threading.Timer(day_second, clock_in)
+    clock_in()
