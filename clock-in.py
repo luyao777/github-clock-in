@@ -16,7 +16,7 @@ with open(clock_in_file, 'a') as f:
     timeStamp = time.time()
     localTime = time.localtime(timeStamp)
     strTime = time.strftime("%Y-%m-%d %H:%M:%S", localTime)
-    clock_in_content = strTime + " I have clocked in."
+    clock_in_content = strTime + " I have clocked in.\n"
     f.write(clock_in_content)
 
 os.system(git_add)
